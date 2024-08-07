@@ -5,4 +5,12 @@
 
     <a href='/new'>Add Username</a>
 
+    <div>
+        <% usernames.forEach(name => { %>
+         <%= name.username %>
+        <% }) %>
+    </div>
+
+    
+
 <%- include('./partials/footer') %>
