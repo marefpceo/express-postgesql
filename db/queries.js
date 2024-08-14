@@ -10,10 +10,17 @@ async function insertUsername(username) {
 }
 
 async function searchDatabase(searchInput) {
-  const { rows } = await pool.query('SELECT * FROM usernames WHERE (searchInput) VALUES ($1)', [searchInput]);
+  const { rows } = await pool.query('SELECT * FROM usernames WHERE username LIKE $1', [`%${searchInput}%`]);
+  return rows;
+}
+
+async function deleteList() {
+  await pool.query('DELETE FROM usernames');
 }
 
 module.exports = {
   getAllUsernames,
-  insertUsername
+  insertUsername,
+  searchDatabase,
+  deleteList
 };

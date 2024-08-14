@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+.user-list {
+  margin-top: 35px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+li {
+  padding: 2px 0;
+}

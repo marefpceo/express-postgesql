@@ -3,12 +3,24 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
-    <a href='/new'>Add Username</a>
+    <div class='list-actions'>
+        <a href='/new'>Add Username</a>
+        <a href='/delete'>Delete List</a>
+    </div>
 
-    <div>
-        <% usernames.forEach(name => { %>
-         <%= name.username %>
-        <% }) %>
+    <div class='user-list'>
+        <ul>
+            <% usernames.forEach(name => { %>
+                <li><%= name.username %></li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class='search-div'>
+        <form method='post'>
+            <input type='text' name='searchInput' id='searchInput'>
+            <button type='submit'>Search</button>
+        </form>
     </div>
 
     

@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+
 const { body, validationResult } = require('express-validator');
 const db = require('../db/queries');
 
@@ -27,7 +28,6 @@ exports.post_new = [
     } else {
       await db.insertUsername(username);
       res.redirect('/');
-      // res.send(`Handle saving new username to DB. Username: ${req.body.username}`);
     }
   }),
 ];
